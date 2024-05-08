@@ -11,7 +11,7 @@
 </head>
 <body>
     <div id="app" class="login">
-        <img src="images/IMG_0580.GIF" alt="login image" class="login__img">
+        <img src="images/img1.jpg" alt="login image" class="login__img">
         <form class="login-form">
             <h1 class="login-title">Login</h1>
             
@@ -21,14 +21,16 @@
                     <div class="login-box-input">
                         <input type="text" v-model="username" required class="login-input" id="login-username"  @input="checkInput" placeholder=" ">
                         <label for="login-username" class="login-label">Username or Email</label>
+                        <p class="error-message" v-if="errorMessage">{{ errorMessage }}</p>
                     </div>
                 </div>
+            
                 <div class="login-box">
                     <i class='bx bx-lock-alt'></i>
                     <div class="login-box-input">
                         <input :type="showPassword ? 'text' : 'password'" v-model="password" required class="login-input" id="login-pass" placeholder=" ">
                         <label for="login-pass" class="login-label">Password</label>
-                        <i class="material-icons" @click="toggleVisibility">{{visibilityIcon}}</i>
+                        <i class="material-icons" @click="toggleVisibility">{{ visibilityIcon }}</i>
                     </div>
                 </div>
                 <div class="login-check">

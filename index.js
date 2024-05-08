@@ -29,7 +29,11 @@ new Vue({
           alert('Please fill in the password field.');
         }
       } else {
-        alert('Successfully logged in!');
+        if (this.errorMessage) {
+          alert('Please correct the errors before logging in.');
+        } else {
+          alert('Successfully logged in!');
+        }
       }
     },
     forgotPassword() {
@@ -45,7 +49,7 @@ new Vue({
       }
     },
     isValidEmail(email) {
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const emailRegex =/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
       return emailRegex.test(email);
     }
   }
