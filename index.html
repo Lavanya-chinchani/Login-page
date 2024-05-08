@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+</head>
+<body>
+    <div id="app" class="login">
+        <img src="images/IMG_0580.GIF" alt="login image" class="login__img">
+        <form class="login-form">
+            <h1 class="login-title">Login</h1>
+            
+            <div class="login-content">
+                <div class="login-box">
+                    <i class='bx bx-user'></i>
+                    <div class="login-box-input">
+                        <input type="text" v-model="username" required class="login-input" id="login-username"  @input="checkInput" placeholder=" ">
+                        <label for="login-username" class="login-label">Username or Email</label>
+                    </div>
+                </div>
+                <div class="login-box">
+                    <i class='bx bx-lock-alt'></i>
+                    <div class="login-box-input">
+                        <input :type="showPassword ? 'text' : 'password'" v-model="password" required class="login-input" id="login-pass" placeholder=" ">
+                        <label for="login-pass" class="login-label">Password</label>
+                        <i class="material-icons" @click="toggleVisibility">{{visibilityIcon}}</i>
+                    </div>
+                </div>
+                <div class="login-check">
+                    <div class="login-class-group">
+                        <input type="checkbox" v-model="rememberMe" class="login-check-input" id="login-check">
+                        <label for="login-check" class="login-check-label">Remember Me</label>
+                        
+                    </div>
+                    <a href="#" class="login-forgot" @click.prevent="forgotPassword">Forgot Password?</a>
+                </div>
+                <button type="button" class="login-button" @click="login">Login</button>
+                <p class="login-register">
+                    Don't have an account? <a href="#">Register</a>
+                </p>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="index.js"></script>
+</body>
+</html>
