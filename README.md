@@ -1,3 +1,4 @@
+<<<<<<< HEAD
  #  Project Title
    ### LOGIN PAGE
 
@@ -12,3 +13,6 @@ The login page exemplifies a modern approach to user authentication on web platf
 * Forget password?: This link allows the user to change their password in case he/she forgets.
 * Register link: This link takes the user to the signup page in case they want to create a new account.
 
+=======
+# Login-page
+>>>>>>> origin/main
