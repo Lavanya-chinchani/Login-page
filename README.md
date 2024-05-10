@@ -29,6 +29,8 @@ The login page exemplifies a modern approach to user authentication on web platf
     Then, run the following command to clone the repository:
     ```
     git clone [repository_url]
+    OR
+    Download Zip File
     ```
     url:https://github.com/Lavanya-chinchani/Login-page.git
   * Navigate to the Project Directory: Once the cloning process is complete, navigate to the directory of the cloned repository using the cd command:
