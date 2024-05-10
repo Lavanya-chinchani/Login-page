@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
  #  Project Title
    ### LOGIN PAGE
 
@@ -11,8 +11,19 @@ The login page exemplifies a modern approach to user authentication on web platf
 * Show Password: This checkbox field is used to display or hide the password to the user. By default, it hides the password.
 * Log-in button: This button is used to authenticate and give access to the verified user.
 * Forget password?: This link allows the user to change their password in case he/she forgets.
-* Register link: This link takes the user to the signup page in case they want to create a new account.
 
-=======
-# Login-page
->>>>>>> origin/main
+## System Requirements
+**Operating System**
+  * Windows 10 or above(Recommended)
+  * MacOS
+**Web Browser**
+  *Chrome(Recommended)
+
+## Dependencies
+ * Vue.js('^2.x.x')
+
+## Usage
+ * 
+
+
+
