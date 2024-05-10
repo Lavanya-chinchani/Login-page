@@ -30,7 +30,8 @@ new Vue({
       }
   },
   forgotPassword() {
-      alert('Forgot Password?');
+      if(this.password.trim() === ''){
+        alert('Forgot Password?');
   },
   checkInput() {
       this.errorMessage = '';
