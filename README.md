@@ -19,7 +19,7 @@ The login page exemplifies a modern approach to user authentication on web platf
   * MacOS
     
 **Web Browser**
-  *Chrome(Recommended)
+  * Chrome(Recommended)
 
 ## Dependencies:
  * Vue.js('^2.x.x')
