@@ -13,9 +13,11 @@ The login page exemplifies a modern approach to user authentication on web platf
 * Forget password?: This link shows an alert message.
 
 ## System Requirements:
+
 **Operating System**
   * Windows 10 or above(Recommended)
   * MacOS
+    
 **Web Browser**
   *Chrome(Recommended)
 
