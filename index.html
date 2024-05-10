@@ -5,16 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="index.js" defer></script>
+    
+   
     
 </head>
 <body>
+    <div class="container">
+        <div class="background-slider left">
+            <div class="slider-container">
+                <img src="images/Monte.jpg" alt="background image">
+                <img src="images/hbo.jpg" alt="background image">
+                <img src="images/img4.jpg" alt="background image">
+                <img src="images/lala.jpg" alt="background image">
+                <img src="images/img5.jpg" alt="background image">
+                <img src="images/img2.jpg" alt="background image">
+
+                <img src="images/Monte.jpg" alt="background image">
+                <img src="images/hbo.jpg" alt="background image">
+                <img src="images/img4.jpg" alt="background image">
+                <img src="images/lala.jpg" alt="background image">
+                <img src="images/img5.jpg" alt="background image">
+                <img src="images/img2.jpg" alt="background image">
+           </div>
+        </div>
+
+        <div class="background-slider toggle">
+            <div class="slider-container">
+                <img src="images/Monte.jpg" alt="background image">
+                <img src="images/hbo.jpg" alt="background image">
+                <img src="images/img4.jpg" alt="background image">
+                <img src="images/lala.jpg" alt="background image">
+                <img src="images/img5.jpg" alt="background image">
+                <img src="images/img2.jpg" alt="background image">
+
+                <img src="images/Monte.jpg" alt="background image">
+                <img src="images/hbo.jpg" alt="background image">
+                <img src="images/img4.jpg" alt="background image">
+                <img src="images/lala.jpg" alt="background image">
+                <img src="images/img5.jpg" alt="background image">
+                <img src="images/img2.jpg" alt="background image">
+           </div>
+        </div>
+
+        <div class="background-slider right">
+            <div class="slider-container">
+                <img src="images/Monte.jpg" alt="background image">
+                <img src="images/hbo.jpg" alt="background image">
+                <img src="images/img4.jpg" alt="background image">
+                <img src="images/lala.jpg" alt="background image">
+                <img src="images/img5.jpg" alt="background image">
+                <img src="images/img2.jpg" alt="background image">
+
+                <img src="images/Monte.jpg" alt="background image">
+                <img src="images/hbo.jpg" alt="background image">
+                <img src="images/img4.jpg" alt="background image">
+                <img src="images/lala.jpg" alt="background image">
+                <img src="images/img5.jpg" alt="background image">
+                <img src="images/img2.jpg" alt="background image">
+           </div>
+        </div>
+    </div>
+
     <div id="app" class="login">
-        <img src="images/img1.jpg" alt="login image" class="login__img">
         <form class="login-form">
             <h1 class="login-title">Login</h1>
-            
             <div class="login-content">
                 <div class="login-box">
                     <i class='bx bx-user'></i>
@@ -28,28 +87,30 @@
                 <div class="login-box">
                     <i class='bx bx-lock-alt'></i>
                     <div class="login-box-input">
-                        <input :type="showPassword ? 'text' : 'password'" v-model="password" required class="login-input" id="login-pass" placeholder=" ">
+                        <input :type="showPassword ? 'text' : 'password'" v-model="password" required class="login-input" id="login-pass"  @input="checkPassword" placeholder=" ">
                         <label for="login-pass" class="login-label">Password</label>
+                        <p class="error-message">{{ passwordError }}</p>
                         <i class="material-icons" @click="toggleVisibility">{{ visibilityIcon }}</i>
                     </div>
                 </div>
+
                 <div class="login-check">
                     <div class="login-class-group">
                         <input type="checkbox" v-model="rememberMe" class="login-check-input" id="login-check">
                         <label for="login-check" class="login-check-label">Remember Me</label>
-                        
                     </div>
                     <a href="#" class="login-forgot" @click.prevent="forgotPassword">Forgot Password?</a>
                 </div>
-                <button type="button" class="login-button" @click="login">Login</button>
+
+                <button type="button" class="login-button" :disabled="!validInputs" @click="login" >Login</button>
                 <p class="login-register">
                     Don't have an account? <a href="#">Register</a>
                 </p>
+
             </div>
         </form>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
-    <script src="index.js"></script>
+    
+    
 </body>
 </html>

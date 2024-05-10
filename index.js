@@ -5,6 +5,7 @@ new Vue({
       username: '',
       password: '',
       errorMessage: '',
+      passwordError:'',
       rememberMe: false,
       showPassword: false
     };
@@ -12,6 +13,9 @@ new Vue({
   computed: {
     visibilityIcon() {
       return this.showPassword ? 'visibility' : 'visibility_off';
+    },
+    validInputs() {
+      return this.username.trim() !== '' && this.password.trim() !== '' && !this.passwordError;
     }
   },
   methods: {
@@ -19,37 +23,39 @@ new Vue({
       this.showPassword = !this.showPassword;
     },
     login() {
-      if (!this.username.trim() && !this.password.trim()) {
-        alert('Please fill in both username/email and password fields.');
-      } else if (!this.username.trim() || !this.password.trim()) {
-        if (!this.username.trim()) {
-          alert('Please fill in the username/email field.');
-        }
-        if (!this.password.trim()) {
-          alert('Please fill in the password field.');
-        }
-      } else {
-        if (this.errorMessage) {
+      if (this.errorMessage || this.passwordError) {
           alert('Please correct the errors before logging in.');
-        } else {
+      } else {
           alert('Successfully logged in!');
-        }
       }
-    },
-    forgotPassword() {
+  },
+  forgotPassword() {
       alert('Forgot Password?');
-    },
-    checkInput() {
+  },
+  checkInput() {
       this.errorMessage = '';
-
+  
       if (this.username.includes('@')) {
-        if (!this.isValidEmail(this.username)) {
-          this.errorMessage = 'Email format is not correct';
-        }
+          if (!this.isValidEmail(this.username)) {
+              this.errorMessage = 'Email format is not correct';
+          }
       }
-    },
+  },
+  checkPassword() {
+      if (this.password.trim() === '') {
+          this.passwordError = 'Password is required';
+      } else if (this.password.length < 8) {
+          this.passwordError = 'Password must be at least 8 characters long';
+      } else if (/\s/.test(this.password)) {
+        this.passwordError = 'Password cannot contain spaces';
+      }else {
+      this.passwordError = '';
+      }
+
+  },
+  
     isValidEmail(email) {
-      const emailRegex =/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       return emailRegex.test(email);
     }
   }

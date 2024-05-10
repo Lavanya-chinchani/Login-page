@@ -1,204 +1,304 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
-@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
-:root{
-    --white-color:hsl(0,0%,100%);
-    --black-color: hsl(0,0%,100%);
+:root {
+    --white-color: hsl(0, 0%, 100%);
+    --black-color: hsl(0, 0%, 100%);
     --body-font: "Poppins", sans-serif;
-    --h1-font-size: 1.75 rem;
-    --normal-font-size:1 rem;
+    --h1-font-size: 1.75rem;
+    --normal-font-size: 1rem;
     --small-font-size: .813rem;
-    --font-medium:500;
+    --font-medium: 500;
 }
 
-*{
+* {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
 
-body,input,button{
+body, input, button {
     font-size: var(--normal-font-size);
     font-family: var(--body-font);
 }
 
 body {
-    color:var(--white-color);
+    color: var(--white-color);
 }
 
-input,button{
+input, button {
     border: none;
     outline: none;
 }
-a{
-    
+
+a {
     text-decoration: none;
 }
 
-img {
-    max-width: 100%;
-    height:auto;
-    filter:blur(3px);
+.container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    gap: 5px;
+    background-color: black; /* Distribute the space between the sliders */
+}
+
+.background-slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 20px; /* Adjust as needed */
+}
+
+.slider-container {
+    display: flex;
+    animation-duration: 20s; /* Adjust duration based on your needs */
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.slider-container img {
+    width: 100%; /* Adjust width to account for border */
+    height: 100%; /* Maintain aspect ratio */
+    object-fit: cover;
+    border-radius: 10px; /* Adjust the border radius as needed */
+    border: 2px solid rgb(11, 11, 11); /* Add a white border around the images */
+    box-sizing: border-box;
+    margin-right: 10px;/* Center the images horizontally */
     
 }
-.login{
+
+/* Adjust the width of each slider based on the number of images */
+.background-slider.left,
+.background-slider.right,
+.background-slider.toggle {
+    height: 200px; /* Adjust height as needed */
+}
+
+/* Animation keyframes for left sliding */
+@keyframes slideLeft {
+    0%, 100% {
+        transform: translateX(0%);
+    }
+    50% {
+        transform: translateX(-200%);
+    }
+}
+
+/* Animation keyframes for right sliding */
+@keyframes slideRight {
+    100% ,0% {
+        transform: translateX(0%);
+    }
+    50% {
+        transform: translateX(-200%);
+    }
+}
+
+/* Animation keyframes for toggle sliding */
+@keyframes slideToggle {
+    0%, 100% {
+        transform: translateX(-200%);
+    }
+    50% {
+        transform: translateX(0%);
+    }
+}
+
+/* Apply animation names and delays to the appropriate sliders */
+.background-slider.left .slider-container {
+    animation-name: slideLeft;
+    animation-delay: 0s; /* Start immediately */
+}
+
+.background-slider.right .slider-container {
+    animation-name: slideRight;
+    animation-delay: 0s; /* Start immediately */
+}
+
+.background-slider.toggle .slider-container {
+    animation-name: slideToggle;
+    animation-delay: 0s; /* Start immediately */
+}
+
+
+
+
+.login {
     position: relative;
     height: 100vh;
     display: grid;
     align-items: center;
+    z-index: 1;
 }
-.login__img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-  }
-.login-form{
+
+
+
+.login-form {
     position: relative;
-    background-color: hsla(0, 0%, 10%, 0.1);
-    border:2px solid var(--white-color);
-    margin-inline: 1.5 rem;
+    background-color: hsla(0, 2%, 28%, 0.1);
+    border: 2px solid var(--white-color);
+    margin-inline: 1.5rem;
     padding: 2.5rem 1.5rem;
     border-radius: 0rem;
     backdrop-filter: blur(8px);
 }
-.login-title{
+
+.login-title {
     text-align: center;
     font-size: var(--h1-font-size);
     font-weight: var(--font-medium);
     margin-bottom: 1rem;
 }
 
-.login-content,.login-box{
-    display:grid;
+.login-content, .login-box {
+    display: grid;
 }
-.login-content{
+
+.login-content {
     row-gap: 1.75rem;
     margin-bottom: 1.5rem;
 }
 
-.login-box{
+.login-box {
     grid-template-columns: max-content 1fr;
-    align-items:center;
+    align-items: center;
     column-gap: 0.75rem;
     border-bottom: 2px solid var(--white-color);
 }
-.login-icon,.login-eye{
-    font-size:1.5rem;
+
+.login-icon, .login-eye {
+    font-size: 1.5rem;
 }
 
-
-.login-input{
+.login-input {
     width: 100%;
     padding-block: 0.8rem;
     background: none;
-    color:var(--white-color);
+    color: var(--white-color);
     position: relative;
     z-index: 1;
-    
-
 }
 
-.login-box-input{
+.login-box-input {
     position: relative;
     padding-top: 0.8rem 0;
 }
 
-.login-label{
+.login-label {
     position: absolute;
-    left:0;
-    top:13px;
+    left: 0;
+    top: 13px;
     font-weight: var(--small-font-size);
     transition: top 0.3s, font-size 0.3s;
 }
 
-.material-icons{
-    position:absolute;
-    right:0;
-    top:18px;
-    z-index:10;
-    cursor:pointer;
-    
-    
+.material-icons {
+    position: absolute;
+    right: 0;
+    top: 18px;
+    z-index: 10;
+    cursor: pointer;
 }
-
-
-
-
 
 .login-box:nth-child(2) input {
     padding-right: 1.8rem;
 }
 
-.login-check,.login-check-group{
+.login-check, .login-check-group {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-.login-check{
+
+.login-check {
     margin-bottom: 1.5rem;
 }
-.login-check-label, .login-forgot,.login-register{
+
+.login-check-label, .login-forgot, .login-register {
     font-size: var(--small-font-size);
 }
-.login-check-group{
+
+.login-check-group {
     column-gap: 0.5rem;
 }
-.login-check-input{
-    width:16px;
+
+.login-check-input {
+    width: 16px;
     height: 16px;
 }
-.login-forgot{
-    color:var(--white-color);
+
+.login-forgot {
+    color: var(--white-color);
 }
-.login-forgot:hover{
+
+.login-forgot:hover {
     text-decoration: underline;
 }
-.login-button{
+
+.login-button {
     width: 100%;
     padding: 0.8rem;
-    border-radius:0.5rem ;
+    border-radius: 0.5rem;
     background-color: var(--white-color);
     font-weight: var(--font-medium);
     cursor: pointer;
     margin-bottom: 0.5rem;
 }
-.login-register{
+.login-button[disabled] {
+        cursor: not-allowed;
+}
+.login-button:not([disabled]) {
+            cursor: pointer;
+}
+    
+
+.login-register {
     text-align: center;
 }
+
 .login-register a {
-    color:var(--white-color);
-    font-weight:var(--font-medium);
+    color: var(--white-color);
+    font-weight: var(--font-medium);
 }
-.login-register a:hover{
+
+.login-register a:hover {
     text-decoration: underline;
 }
-.login-input:focus+ .login-label{
-    top:-12px;
+
+.login-input:focus+.login-label {
+    top: -12px;
     font-size: var(--small-font-size);
 }
-.login-input:not(:placeholder-shown).login-input:not(:focus) + .login-label{
-    top:-12px;
-    font-size:var(--small-font-size);
+
+.login-input:not(:placeholder-shown).login-input:not(:focus) + .login-label {
+    top: -12px;
+    font-size: var(--small-font-size);
 }
+
 .error-message {
     color: rgba(255, 0, 0, 0.775);
     font-size: 12px;
     margin-top: 5px;
-  }
+}
 
-@media screen and (min-width:576px){
-    .login{
+@media screen and (min-width: 576px) {
+    .login {
         justify-content: center;
     }
-    .login-form{
-        width:40git0px;
-        height:490px;
+
+    .login-form {
+        width: 400px;
+        height: 490px;
         padding: 4rem 3rem 3.5rem;
         border-radius: 1.5rem;
     }
-    .login-title{
+
+    .login-title {
         font-size: 2rem;
     }
 }
