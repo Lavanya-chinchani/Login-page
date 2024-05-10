@@ -39,7 +39,7 @@ The login page exemplifies a modern approach to user authentication on web platf
     ```
 
     ```
-     open undex.html \\for macOS
+     open index.html \\for macOS
     ```
   * View and Interact with the Project: Once the HTML file is opened in your web browser, you should be able to view and interact with the Vue.js project.
 
