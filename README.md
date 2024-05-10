@@ -23,7 +23,25 @@ The login page exemplifies a modern approach to user authentication on web platf
  * Vue.js('^2.x.x')
 
 ## Usage
- * 
+ * Clone the Repository: Open your terminal or command prompt and navigate to the directory where you want to clone the repository.
+    Then, run the following command to clone the repository:
+    ```
+    git clone [repository_url]
+    ```
+  * Navigate to the Project Directory: Once the cloning process is complete, navigate to the directory of the cloned repository using the cd command:
+    ```
+    cd cloned_repository_directory
+    ```
+  * Run the HTML File: If your project consists of a single HTML file containing Vue.js code, you can simply open the HTML file in your web browser.
+     Use the following command to open the HTML file:
+    ```
+    start index.html \\for windows
+    ```
+
+    ```
+     open undex.html \\for macOS
+    ```
+  * View and Interact with the Project: Once the HTML file is opened in your web browser, you should be able to view and interact with the Vue.js project.
 
 
 
