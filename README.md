@@ -30,7 +30,7 @@ The login page exemplifies a modern approach to user authentication on web platf
     ```
     git clone [repository_url]
     ```
-    url:https://github.com/Lavanya-chinchani/Login-page
+    url:https://github.com/Lavanya-chinchani/Login-page.git
   * Navigate to the Project Directory: Once the cloning process is complete, navigate to the directory of the cloned repository using the cd command:
     ```
     cd cloned_repository_directory
